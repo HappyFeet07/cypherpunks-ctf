@@ -21,7 +21,7 @@ contract("Bank", function(accounts) {
     await ethernaut.registerLevel(level.address)
     instance = await utils.createLevelInstance(
       ethernaut, level.address, player, Bank,
-      { from: player }
+      { from : player }
     )
   })
 
@@ -30,12 +30,12 @@ contract("Bank", function(accounts) {
     assert.equal(29, await instance.balanceOf(player))
   })
 
-  it("Player should be able to transfer to other account", async function() {
+  it("should be able to transfer to other account", async function() {
     await instance.transfer(transferTo, 10, {from: player})
     assert.equal(10, await instance.balanceOf(transferTo))
   })
 
-  it("Player should able to solve the level", async function() {
+  it("should able to solve the level", async function() {
     await instance.transfer(transferTo, 30, {from: player})
     assert.equal(true, await instance.balanceOf(player) > 29)
   })
