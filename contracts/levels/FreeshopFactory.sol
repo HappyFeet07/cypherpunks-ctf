@@ -12,10 +12,7 @@ contract FreeshopFactory is Level {
     return nowinstance;
   }
 
-  function validateInstance(address _instance, address _player)
-    public
-    returns (bool)
-  {
+  function validateInstance(address _instance, address _player) public returns (bool) {
     _player;
     Freeshop instance = Freeshop(_instance);
     return instance.getBalance() == 0 ether;

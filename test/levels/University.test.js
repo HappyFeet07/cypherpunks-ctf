@@ -1,3 +1,5 @@
+const truffleAssert = require("truffle-assertions")
+
 const University = artifacts.require("./levels/University.sol")
 const UniversityFactory = artifacts.require("./levels/UniversityFactory.sol")
 
